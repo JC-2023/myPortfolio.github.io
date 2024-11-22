@@ -50,7 +50,7 @@
 						<!-- Featured Post -->
 							<article class="post featured">
 								<header class="major">
-									<h2>Projects</h2>
+									<h2>Project 1</h2>
 								</header>
 								<header class="minor">
 									<h2>Sentiment Analysis Project</h2>
@@ -66,6 +66,32 @@
 									 Additionally, we used hugging face transformers to classify the articles. In the end, the overall sentiment returned by the models
 									 was generally positive, but still primarily neutral. These findings can be seen reflected in the graphic associated with this article.
 								</p>
+							</article>
+
+							<article class="post featured">
+								<header class="major">
+									<h2>Project 2</h2>
+								</header>
+								<header class="minor">
+									<h2>CNN Text Classification Project</h2>
+									<h3>This is the third major project we have done in MA488 and the second on this website!<br \>
+										Our task was to take in around half a million amazon reviews and be able to identify what product category they fall into by using the text review.</h3>
+								</header>
+								<a class="image fit"><img src="images/RNN_Cover.png" alt="" /></a>
+								<p>	For our project, we started with the amazon review dataset, but needed to add a new column for product categories since the dataset didn't include one natively. <br \>
+									The first step was securing the data. This was achieved by pulling the dataset from kaggle and then reading it into a pandas dataframe.
+									 From there, we then had to identify the main topics in reviews and then find which one to apply to each distinct product. 
+									 To accomplish this, we used LDiA to find the 8 most prevalent topics. Once identified, these topics were then assigned back to the reviews. 
+									 In order to make it standard for all reviews per product, the data was grouped by product and the mode of topics was selected to represent all reviews of the product. <br \>
+									 Now that we had this processed dataset with labels, we were able to apply a CNN to categorize the reviews by text. 
+									 This was done using tensorflow with embedding, dense, dropout and convolutional layers in a sequential model. Until the final dense layer, the activation function used was 'relu', but the final utilized the 'sigmoid'.<br \>
+									 The results of the model can be seen below. one thing to note is that the overall model performed quite well with the exception of the throwaway category 'Shipping(Nonsense)'.
+									 This category seems to be the one where the unusual product reviews go to if they don't fit elsewhere. Therefore, the overall average with these removed would be higher.
+								</p>
+								<a class="image fit"><img src="images/RNN_Graphs.png" alt="" /></a>
+								<p>RNN Accuracy and Loss by Epoch</p>
+								<a class="image fit"><img src="images/RNN_Classification_Report.png" alt="" /></a>
+								<p>RNN Classification Report</p>
 							</article>
 
 						<!-- Posts -->
